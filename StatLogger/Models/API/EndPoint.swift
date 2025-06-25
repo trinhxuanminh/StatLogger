@@ -8,24 +8,26 @@
 import Foundation
 
 enum EndPoint {
+  case collector
+  
   var domain: String {
     switch self {
-    default:
-      return ""
+    case .collector:
+      return "https://jsonplaceholder.typicode.com"
     }
   }
   
   var path: String? {
     switch self {
-    default:
-      return ""
+    case .collector:
+      return "/posts"
     }
   }
   
   var method: String {
     switch self {
-    default:
-      return ""
+    case .collector:
+      return "POST"
     }
   }
   

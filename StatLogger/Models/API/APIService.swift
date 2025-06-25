@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class APIService {
+final class APIService: APIServiceProtocol {
   func request<T: Codable>(from endPoint: EndPoint, body: Data? = nil) async throws -> T {
     guard let request = endPoint.request(body: body) else {
       throw APIError.invalidRequest
